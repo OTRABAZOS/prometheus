@@ -30,10 +30,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
   
-  - job_name: 'coingeckoproxy'
+  - job_name: 'coingeckoproxy s2'
     scrape_interval: 120s
-    #'http://51.210.187.61:4000/req?key=mrAQe4rTzJkLb9BKmgP4FngM&origen=s2
-    metrics_path: /req?key=mrAQe4rTzJkLb9BKmgP4FngM&origen=s2
+    metrics_path: /req?key=mrAQe4rTzJkLb9BKmgP4FngM&origen=s2&coin=aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
