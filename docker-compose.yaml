@@ -1,8 +1,8 @@
-version: '3.3'
+version: "3.3"
 
 volumes:
-    prometheus_data: {}
-    grafana_data: {}
+  prometheus_data: {}
+  grafana_data: {}
 
 networks:
   internet:
@@ -11,14 +11,18 @@ networks:
 services:
   prometheus:
     image: prom/prometheus:v2.1.0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.cryptocertify.com`)"
+      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
-      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
     ports:
       - 9090:9090
     networks:
@@ -27,6 +31,10 @@ services:
 
   grafana:
     image: grafana/grafana
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.cryptocertify.com`)"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     depends_on:
       - prometheus
     ports:
@@ -46,3 +54,27 @@ services:
       - intranet
       - internet
     restart: always
+  traefik:
+    image: traefik:v2.4.5
+    container_name: traefik
+    command:
+      #- "--log.level=DEBUG"
+      #- "--api.insecure=true"
+      - "--api.insecure=true"
+      - "--metrics"
+      - "--metrics.prometheus.buckets=0.1,0.3,1.2,5.0"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.address=:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`p1.cryptocertify.com`)"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+      - "traefik.http.middlewares.test-auth.basicauth.users=admin:$apr1$pjd4nf1t$u/Hb74Y2/yLBZYiZzkTLL/"
+    ports:
+      - "80:80"
+      - "443:443"
+      #- "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
