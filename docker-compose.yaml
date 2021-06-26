@@ -11,6 +11,7 @@ networks:
 
 services:
   prometheus:
+    container_name: prometheus
     image: prom/prometheus:v2.1.0
     labels:
       - "traefik.http.routers.prometheus_prometheus_1.rule=Host(`prometheus.cryptoscertify.com`)"
@@ -31,6 +32,7 @@ services:
     restart: always
 
   grafana:
+    container_name: grafana
     image: grafana/grafana
     labels:
       - "traefik.http.routers.prometheus_grafana_1.rule=Host(`monitor.cryptoscertify.com`)"
@@ -56,8 +58,8 @@ services:
       - internet
     restart: always
   traefik:
-    image: traefik:v2.4.5
     container_name: traefik
+    image: traefik:v2.4.5
     restart: always
     command:
       - "--log.level=DEBUG"
@@ -72,6 +74,7 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.email=jgrasiot@gmail.com"
       - "--certificatesresolvers.letsencrypt.acme.storage=/acme.json"
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      # - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
     labels:
       - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
       - "traefik.http.routers.traefik.tls=true"
