@@ -14,6 +14,7 @@ services:
     container_name: prometheus
     image: prom/prometheus:v2.1.0
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.cryptoscertify.com`)"
       - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
@@ -35,6 +36,7 @@ services:
     container_name: grafana
     image: grafana/grafana
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`monitor.cryptoscertify.com`)"
       - "traefik.http.routers.grafana.tls=true"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
@@ -59,7 +61,7 @@ services:
     restart: always
   traefik:
     container_name: traefik
-    image: traefik:v2.4.5
+    image: traefik:v2.4.9
     restart: always
     command:
       - "--log.level=DEBUG"
@@ -76,6 +78,7 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
       # - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
       - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
