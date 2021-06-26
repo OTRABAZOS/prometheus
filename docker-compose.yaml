@@ -68,9 +68,9 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
       - "--entrypoints.web.address=:80"
-      - "--acme.email=jgrasiot@gmail.com"
-      - "--acme.storage=/acme.json"
-      - "--acme.tlschallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.email=jgrasiot@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
     labels:
       - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
       - "traefik.http.routers.traefik.tls=true"
@@ -81,6 +81,7 @@ services:
       - "443:443"
       #- "8080:8080"
     volumes:
+      - "letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - intranet
