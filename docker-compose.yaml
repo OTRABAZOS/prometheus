@@ -67,9 +67,9 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
       - "--entrypoints.web.address=:80"
-      - --certificatesresolvers.le.acme.email=jgrasiot@gmail.com
-      - --certificatesresolvers.le.acme.storage=/acme.json
-      - --certificatesresolvers.le.acme.tlschallenge=true
+      - "--acme.email=jgrasiot@gmail.com"
+      - "--acme.storage=/acme.json"
+      - "--acme.tlschallenge=true"
     labels:
       - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
       - "traefik.http.routers.traefik.tls=true"
