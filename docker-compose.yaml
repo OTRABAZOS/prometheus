@@ -58,9 +58,9 @@ services:
     image: traefik:v2.4.5
     container_name: traefik
     command:
-      #- "--log.level=DEBUG"
-      #- "--api.insecure=true"
+      - "--log.level=DEBUG"
       - "--api.insecure=true"
+      - "--api.dashboard=true"
       - "--metrics"
       - "--metrics.prometheus.buckets=0.1,0.3,1.2,5.0"
       - "--providers.docker=true"
