@@ -26,7 +26,7 @@ scrape_configs:
   - job_name: traefik
     scrape_interval: 120s
     static_configs:
-      - targets: ["traefik:8082"]
+      - targets: ["traefik:8080"]
 
   - job_name: "coingeckoproxy s2"
     scrape_interval: 120s
