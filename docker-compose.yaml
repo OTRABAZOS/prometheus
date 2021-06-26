@@ -85,7 +85,7 @@ services:
       - "traefik.http.routers.traefik.middlewares=admin-auth"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
       - "traefik.http.middlewares.admin-auth.basicauth.users=admin:$apr1$pjd4nf1t$u/Hb74Y2/yLBZYiZzkTLL/"
-      ports:
+    ports:
       - "80:80"
       - "443:443"
     volumes:
