@@ -1,13 +1,13 @@
 # my global config
 global:
-  scrape_interval:     120s # By default, scrape targets every 15 seconds.
+  scrape_interval: 120s # By default, scrape targets every 15 seconds.
   evaluation_interval: 120s # By default, scrape targets every 15 seconds.
   # scrape_timeout is set to the global default (10s).
 
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-      monitor: 'criptoia'
+    monitor: "criptoia"
 
 # Load and evaluate rules in this file every 'evaluation_interval' seconds.
 rule_files:
@@ -18,27 +18,27 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 120s
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
-    static_configs:
-      - targets: ['localhost:9090']
-  
-  - job_name: 'coingeckoproxy s2'
+  - job_name: "prometheus"
     scrape_interval: 120s
     static_configs:
-      - targets: ['51.210.187.61:4000']
+      - targets: ["localhost:9090"]
+
+  - job_name: traefik
+    scrape_interval: 120s
+    static_configs:
+      - targets: ["traefik:8082"]
+
+  - job_name: "coingeckoproxy s2"
+    scrape_interval: 120s
+    static_configs:
+      - targets: ["51.210.187.61:4000"]
         labels:
-          group: 'json'
+          group: "json"
     metrics_path: /req
     params:
-      key: ['pJ5dZA8WhAXVaZpJ5d']
-      origen: ['s2']
-      coins: ['aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash']
-
+      key: ["pJ5dZA8WhAXVaZpJ5d"]
+      origen: ["s2"]
+      coins:
+        [
+          "aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash"
+        ]
