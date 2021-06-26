@@ -84,7 +84,7 @@ services:
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.middlewares=my-auth
       - traefik.http.services.traefik.loadbalancer.server.port=8080
-      - traefik.http.middlewares.my-auth.basicauth.users=${{AUTH}}
+      - "traefik.http.middlewares.my-auth.basicauth.users=${{AUTH}}"
     ports:
       - 80:80
       - 443:443
