@@ -26,8 +26,8 @@ services:
       - "--storage.tsdb.path=/prometheus"
       - "--web.console.libraries=/usr/share/prometheus/console_libraries"
       - "--web.console.templates=/usr/share/prometheus/consoles"
-    ports:
-      - 9090:9090
+    #ports:
+    #  - 9090:9090
     networks:
       - intranet
     restart: always
@@ -42,8 +42,8 @@ services:
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     depends_on:
       - prometheus
-    ports:
-      - 3000:3000
+    #ports:
+    #- 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
     environment:
@@ -79,14 +79,14 @@ services:
       # - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
+      - "traefik.http.routers.traefik.rule=Host(`pr1.cryptoscertify.com`)"
       - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
       - "traefik.http.middlewares.traefik.basicauth.users=admin:$apr1$pjd4nf1t$u/Hb74Y2/yLBZYiZzkTLL/"
     ports:
       - "80:80"
       - "443:443"
-      - "8080:8080"
+      #- "8080:8080"
     volumes:
       - "letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
