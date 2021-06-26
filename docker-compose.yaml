@@ -12,9 +12,9 @@ services:
   prometheus:
     image: prom/prometheus:v2.1.0
     labels:
-      - "traefik.http.routers.prometheus.rule=Host(`prometheus.cryptoscertify.com`)"
-      - "traefik.http.routers.prometheus.tls=true"
-      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+      - "traefik.http.routers.prometheus_prometheus_1.rule=Host(`prometheus.cryptoscertify.com`)"
+      - "traefik.http.routers.prometheus_prometheus_1.tls=true"
+      - "traefik.http.services.prometheus_prometheus_1.loadbalancer.server.port=9090"
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
@@ -32,9 +32,9 @@ services:
   grafana:
     image: grafana/grafana
     labels:
-      - "traefik.http.routers.grafana.rule=Host(`monitor.cryptoscertify.com`)"
-      - "traefik.http.routers.grafana.tls=true"
-      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.http.routers.prometheus_grafana_1.rule=Host(`monitor.cryptoscertify.com`)"
+      - "traefik.http.routers.prometheus_grafana_1.tls=true"
+      - "traefik.http.services.prometheus_grafana_1.loadbalancer.server.port=3000"
     depends_on:
       - prometheus
     ports:
@@ -57,6 +57,7 @@ services:
   traefik:
     image: traefik:v2.4.5
     container_name: traefik
+    restart: always
     command:
       - "--log.level=DEBUG"
       - "--api.insecure=true"
