@@ -1,4 +1,4 @@
-version: "3.3"
+version: 3.3
 
 volumes:
   prometheus_data: {}
@@ -13,21 +13,21 @@ services:
     container_name: prometheus
     image: prom/prometheus:v2.1.0
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.prometheus.rule=Host(`prometheus.cryptoscertify.com`)"
-      - "traefik.http.routers.prometheus.tls=true"
-      - "traefik.http.routers.prometheus.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.prometheus.entrypoints=websecure"
-      - "traefik.http.routers.prometheus.middlewares=adminauth"
-      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+      - traefik.enable=true
+      - traefik.http.routers.prometheus.rule=Host(`prometheus.cryptoscertify.com`)
+      - traefik.http.routers.prometheus.tls=true
+      - traefik.http.routers.prometheus.tls.certresolver=letsencrypt
+      - traefik.http.routers.prometheus.entrypoints=websecure
+      - traefik.http.routers.prometheus.middlewares=adminauth
+      - traefik.http.services.prometheus.loadbalancer.server.port=9090
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
-      - "--config.file=/etc/prometheus/prometheus.yml"
-      - "--storage.tsdb.path=/prometheus"
-      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
-      - "--web.console.templates=/usr/share/prometheus/consoles"
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/usr/share/prometheus/console_libraries
+      - --web.console.templates=/usr/share/prometheus/consoles
     networks:
       - intranet
     restart: always
@@ -36,12 +36,12 @@ services:
     container_name: grafana
     image: grafana/grafana
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.grafana.rule=Host(`monitor.cryptoscertify.com`)"
-      - "traefik.http.routers.grafana.tls=true"
-      - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.grafana.entrypoints=websecure"
-      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - traefik.enable=true
+      - traefik.http.routers.grafana.rule=Host(`monitor.cryptoscertify.com`)
+      - traefik.http.routers.grafana.tls=true
+      - traefik.http.routers.grafana.tls.certresolver=letsencrypt
+      - traefik.http.routers.grafana.entrypoints=websecure
+      - traefik.http.services.grafana.loadbalancer.server.port=3000
     depends_on:
       - prometheus
     volumes:
@@ -64,33 +64,33 @@ services:
     image: traefik:v2.4.9
     restart: always
     command:
-      - "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--api.dashboard=true"
-      - "--metrics"
-      - "--metrics.prometheus.buckets=0.1,0.3,1.2,5.0"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.letsencrypt.acme.email=jgrasiot@gmail.com"
-      - "--certificatesresolvers.letsencrypt.acme.storage=/acme/acme.json"
-      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-      # - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - --log.level=DEBUG
+      - --api.insecure=true
+      - --api.dashboard=true
+      - --metrics
+      - --metrics.prometheus.buckets=0.1,0.3,1.2,5.0
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.letsencrypt.acme.email=jgrasiot@gmail.com
+      - --certificatesresolvers.letsencrypt.acme.storage=/acme/acme.json
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      # - traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`pr1.cryptoscertify.com`)"
-      - "traefik.http.routers.traefik.tls=true"
-      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.middlewares=adminauth"
-      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-      - "traefik.http.middlewares.adminauth.basicauth.users=admin:$apr1$bdk14xcg$sOEBH/Z5Yj1tmu9kG3cky."
+      - traefik.enable=true
+      - traefik.http.routers.traefik.rule=Host(`pr1.cryptoscertify.com`)
+      - traefik.http.routers.traefik.tls=true
+      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.middlewares=adminauth
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+      - traefik.http.middlewares.adminauth.basicauth.users=admin:$apr1$bdk14xcg$sOEBH/Z5Yj1tmu9kG3cky.
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
-      - "./traefik/:/acme/"
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - ./traefik/:/acme/
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - intranet
       - internet
