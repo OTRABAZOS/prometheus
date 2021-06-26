@@ -13,6 +13,7 @@ services:
     image: prom/prometheus:v2.1.0
     labels:
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.cryptoscertify.com`)"
+      - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
     volumes:
       - ./prometheus/:/etc/prometheus/
@@ -32,6 +33,7 @@ services:
     image: grafana/grafana
     labels:
       - "traefik.http.routers.grafana.rule=Host(`monitor.cryptoscertify.com`)"
+      - "traefik.http.routers.grafana.tls=true"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     depends_on:
       - prometheus
@@ -65,10 +67,14 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
       - "--entrypoints.web.address=:80"
+      - --certificatesresolvers.le.acme.email=jgrasiot@gmail.com
+      - --certificatesresolvers.le.acme.storage=/acme.json
+      - --certificatesresolvers.le.acme.tlschallenge=true
     labels:
       - "traefik.http.routers.traefik.rule=Host(`p1.cryptoscertify.com`)"
+      - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-      - "traefik.http.middlewares.test-auth.basicauth.users=admin:$apr1$pjd4nf1t$u/Hb74Y2/yLBZYiZzkTLL/"
+      - "traefik.http.middlewares.traefik.basicauth.users=admin:$apr1$pjd4nf1t$u/Hb74Y2/yLBZYiZzkTLL/"
     ports:
       - "80:80"
       - "443:443"
