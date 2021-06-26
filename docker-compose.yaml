@@ -68,7 +68,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
-      #- "--entrypoints.web.address=:80"
+      - "--entrypoints.web.address=:80"
       - "--certificatesresolvers.letsencrypt.acme.email=jgrasiot@gmail.com"
       - "--certificatesresolvers.letsencrypt.acme.storage=/acme/acme.json"
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
