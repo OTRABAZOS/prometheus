@@ -18,7 +18,7 @@ services:
       - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.routers.prometheus.tls.certresolver=letsencrypt"
       - "traefik.http.routers.prometheus.entrypoints=websecure"
-      - "traefik.http.routers.prometheus.middlewares=admin-auth"
+      - "traefik.http.routers.prometheus.middlewares=adminauth"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
     volumes:
       - ./prometheus/:/etc/prometheus/
@@ -82,9 +82,9 @@ services:
       - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
       - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.middlewares=admin-auth"
+      - "traefik.http.routers.traefik.middlewares=adminauth"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-      - "traefik.http.middlewares.admin-auth.basicauth.users=admin:$apr1$bdk14xcg$sOEBH\/Z5Yj1tmu9kG3cky."
+      - "traefik.http.middlewares.adminauth.basicauth.users=admin:$apr1$bdk14xcg$sOEBH/Z5Yj1tmu9kG3cky."
     ports:
       - "80:80"
       - "443:443"
