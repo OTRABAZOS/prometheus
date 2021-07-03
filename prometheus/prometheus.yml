@@ -102,3 +102,15 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["bitcoin"]
+
+  - job_name: "wallet ethereum s2"
+    scrape_interval: 20m
+    static_configs:
+      - targets: ["51.210.187.61:3000"]
+        labels:
+          group: "csv"
+    metrics_path: /csv
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["ethereum"]
