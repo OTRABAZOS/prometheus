@@ -43,42 +43,6 @@ scrape_configs:
           "aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash"
         ]
 
-  # - job_name: "wallet ethereum s2"
-  #   scrape_interval: 20m
-  #   static_configs:
-  #     - targets: ["51.210.187.61:3000"]
-  #       labels:
-  #         group: "html"
-  #   metrics_path: /html
-  #   params:
-  #     token: ["1venRTb4asd3D3deeddsf"]
-  #     origen: ["s2"]
-  #     target: ["ethereum"]
-
-  # - job_name: "wallet binance s2"
-  #   scrape_interval: 20m
-  #   static_configs:
-  #     - targets: ["51.210.187.61:3000"]
-  #       labels:
-  #         group: "html"
-  #   metrics_path: /html
-  #   params:
-  #     token: ["1venRTb4asd3D3deeddsf"]
-  #     origen: ["s2"]
-  #     target: ["binance"]
-
-  # - job_name: "wallet polygon s2"
-  #   scrape_interval: 20m
-  #   static_configs:
-  #     - targets: ["51.210.187.61:3000"]
-  #       labels:
-  #         group: "html"
-  #   metrics_path: /html
-  #   params:
-  #     token: ["1venRTb4asd3D3deeddsf"]
-  #     origen: ["s2"]
-  #     target: ["polygon"]
-
   - job_name: "wallet xdai s2"
     scrape_interval: 20m
     static_configs:
@@ -114,3 +78,27 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["ethereum"]
+
+  - job_name: "wallet binance s2"
+    scrape_interval: 20m
+    static_configs:
+      - targets: ["51.210.187.61:3000"]
+        labels:
+          group: "csv"
+    metrics_path: /csv
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["binance"]
+
+  - job_name: "wallet polygon s2"
+    scrape_interval: 20m
+    static_configs:
+      - targets: ["51.210.187.61:3000"]
+        labels:
+          group: "csv"
+    metrics_path: /csv
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["polygon"]
