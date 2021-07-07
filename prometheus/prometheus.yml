@@ -29,6 +29,12 @@ scrape_configs:
     static_configs:
       - targets: ["traefik:8080"]
 
+  - job_name: "s2 node exporter"
+    scrape_interval: 10m
+    static_configs:
+      - targets: ["s2.cryptoscertify.com:9100"]
+    metrics_path: /metrics
+
   # MONDES VALORS
   - job_name: "coingeckoproxy s2"
     scrape_interval: 1209965696s
