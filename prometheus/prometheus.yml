@@ -18,6 +18,7 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
+  # SYSTEM MONITORING
   - job_name: "prometheus"
     scrape_interval: 120s
     static_configs:
@@ -28,8 +29,9 @@ scrape_configs:
     static_configs:
       - targets: ["traefik:8080"]
 
+  # MONDES VALORS
   - job_name: "coingeckoproxy s2"
-    scrape_interval: 120s
+    scrape_interval: 1209965696s
     static_configs:
       - targets: ["51.210.187.61:4000"]
         labels:
@@ -42,7 +44,7 @@ scrape_configs:
         [
           "aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash"
         ]
-
+  # WALLETS NUMERO TOTAL
   - job_name: "wallet xdai s2"
     scrape_interval: 20m
     static_configs:
@@ -102,3 +104,16 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["polygon"]
+
+  # ELASTIC SCRAPPER NEWS
+  - job_name: "news count bitcoin s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["bitcoin"]
