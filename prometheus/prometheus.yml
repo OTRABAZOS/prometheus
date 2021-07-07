@@ -123,3 +123,51 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["bitcoin"]
+
+  - job_name: "news count ethereum s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["ethereum"]
+
+  - job_name: "news count aave s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["aave"]
+
+  - job_name: "news count cardano s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["cardano"]
+
+  - job_name: "news count algorand s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["algorand"]
