@@ -303,3 +303,255 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["internet-computer"]
+
+  - job_name: "news count seedify-fund s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["seedify-fund"]
+
+  - job_name: "news count thorchain s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["thorchain"]
+
+  - job_name: "news count tezos s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["tezos"]
+
+  - job_name: "news count ontology s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["ontology"]
+
+  - job_name: "news count pancakeswap-token s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["pancakeswap-token"]
+
+  - job_name: "news count polkadot s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["polkadot"]
+
+  - job_name: "news count republic-protocol s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["republic-protocol"]
+
+  - job_name: "news count stellar s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["stellar"]
+
+  - job_name: "news count solana s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["solana"]
+
+  - job_name: "news count the-graph s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["the-graph"]
+
+  - job_name: "news count zcash s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["zcash"]
+
+  - job_name: "news count chainlink s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["chainlink"]
+
+  - job_name: "news count gochain s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["gochain"]
+
+  - job_name: "news count kusama s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["kusama"]
+
+  - job_name: "news count serum s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["serum"]
+
+  - job_name: "news count skale s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["skale"]
+
+  - job_name: "news count ocean-protocol s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["ocean-protocol"]
+
+  - job_name: "news count binancecoin s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["binancecoin"]
+
+  - job_name: "news count tether s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["tether"]
+
+  - job_name: "news count uniswap s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["uniswap"]
+
+  - job_name: "news count bitcoin-cash s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["bitcoin-cash"]
