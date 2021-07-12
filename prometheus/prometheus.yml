@@ -207,3 +207,99 @@ scrape_configs:
       token: ["1venRTb4asd3D3deeddsf"]
       origen: ["s2"]
       target: ["dogecoin"]
+
+  - job_name: "news count eos s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["eos"]
+
+  - job_name: "news count fantom s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["fantom"]
+
+  - job_name: "news count iota s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["iota"]
+
+  - job_name: "news count litecoin s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["litecoin"]
+
+  - job_name: "news count matic-network s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["matic-network"]
+
+  - job_name: "news count monero s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["monero"]
+
+  - job_name: "news count omisego s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["omisego"]
+
+  - job_name: "news count internet-computer s2"
+    scrape_interval: 5m
+    static_configs:
+      - targets: ["51.210.187.61:3001"]
+        labels:
+          group: "elastic"
+    metrics_path: /news
+    params:
+      token: ["1venRTb4asd3D3deeddsf"]
+      origen: ["s2"]
+      target: ["internet-computer"]
