@@ -37,7 +37,7 @@ scrape_configs:
 
   # MONDES VALORS
   - job_name: "coingeckoproxy s2"
-    scrape_interval: 1209965696s
+    scrape_interval: 120s
     static_configs:
       - targets: ["51.210.187.61:4000"]
         labels:
