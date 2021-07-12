@@ -48,7 +48,8 @@ scrape_configs:
       origen: ["s2"]
       coins:
         [
-          "aave,algorand,binancecoin,bitcoin,bitcoin-cash,cardano,chainlink,crypto-dash,curve-dao-token,dogecoin,eos,ethereum,fantom,gochain,internet-computer,iota,kusama,litecoin,matic-network,monero,ocean-protocol,omisego,ontology,polkadot,republic-protocol,seedify-fund,serum,skale,solana,stellar,tether,tezos,the-graph,thorchain,uniswap,zcash"
+          "bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash
+"
         ]
   # WALLETS NUMERO TOTAL
   - job_name: "wallet xdai s2"
