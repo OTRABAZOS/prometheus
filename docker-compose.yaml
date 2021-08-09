@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 
 volumes:
   prometheus_data: {}
@@ -26,7 +26,7 @@ services:
     command:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
-      - --storage.tsdb.retention=30d
+      - --storage.tsdb.retention=1000d
       - --web.console.libraries=/usr/share/prometheus/console_libraries
       - --web.console.templates=/usr/share/prometheus/consoles
     networks:
@@ -50,12 +50,12 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=CRtwmi21
       - GF_USERS_ALLOW_SIGN_UP=false
-      - GF_SERVER_DOMAIN=a21.cc
+      - GF_SERVER_DOMAIN=monitor.cryptoscertify.com
       - GF_SMTP_ENABLED=true
       - GF_SMTP_HOST=smtp.gmail.com:587
-      - GF_SMTP_USER=jgrasiot@gmail.com
-      - GF_SMTP_PASSWORD=123123
-      - GF_SMTP_FROM_ADDRESS=jgrasiot@gmail.com
+      - GF_SMTP_USER=socialcryptoia@gmail.com
+      - GF_SMTP_PASSWORD=TRWMG:-)
+      - GF_SMTP_FROM_ADDRESS=socialcryptoia@gmail.com
     networks:
       - intranet
       - internet
@@ -85,7 +85,7 @@ services:
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.middlewares=my-auth
       - traefik.http.services.traefik.loadbalancer.server.port=8080
-      - "traefik.http.middlewares.my-auth.basicauth.users=${AUTH}"
+      - 'traefik.http.middlewares.my-auth.basicauth.users=${AUTH}'
     ports:
       - 80:80
       - 443:443
