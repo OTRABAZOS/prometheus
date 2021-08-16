@@ -52,11 +52,11 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_SERVER_DOMAIN=monitor.cryptoscertify.com
       - GF_SMTP_ENABLED=true
-      - GF_SMTP_HOST=smtp.gmail.com:587
-      - GF_SMTP_USER=socialcryptoia@gmail.com
+      - GF_SMTP_HOST=smtp.milgrams.cat:465
+      - GF_SMTP_USER=socialcrypto@milgrams.cat
       - GF_SMTP_SKIP_VERIFY=true
-      - GF_SMTP_PASSWORD="TRWMG:-)"
-      - GF_SMTP_FROM_ADDRESS=socialcryptoia@gmail.com
+      - GF_SMTP_PASSWORD=vg0i2wlldsj0
+      - GF_SMTP_FROM_ADDRESS=socialcrypto@milgrams.cat
     networks:
       - intranet
       - internet
