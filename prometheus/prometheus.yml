@@ -7,7 +7,7 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-    monitor: "criptoia"
+    monitor: 'criptoia'
 
 # Load and evaluate rules in this file every 'evaluation_interval' seconds.
 rule_files:
@@ -19,864 +19,2401 @@ rule_files:
 # Here it's Prometheus itself.
 scrape_configs:
   # SYSTEM MONITORING
-  - job_name: "prometheus"
+  - job_name: 'prometheus'
     scrape_interval: 120s
     static_configs:
-      - targets: ["localhost:9090"]
+      - targets: ['localhost:9090']
 
   - job_name: traefik
     scrape_interval: 120s
     static_configs:
-      - targets: ["traefik:8080"]
+      - targets: ['traefik:8080']
 
-  - job_name: "s2 node exporter"
+  - job_name: 's2 node exporter'
     scrape_interval: 10m
     static_configs:
-      - targets: ["s2.cryptoscertify.com:9100"]
+      - targets: ['s2.cryptoscertify.com:9100']
     metrics_path: /metrics
 
   # MONDES VALORS
-  - job_name: "coingeckoproxy s2"
+  - job_name: 'coingeckoproxy s2'
     scrape_interval: 120s
     static_configs:
-      - targets: ["51.210.187.61:4000"]
+      - targets: ['51.210.187.61:4000']
         labels:
-          group: "json"
+          group: 'json'
     metrics_path: /req
     params:
-      key: ["pJ5dZA8WhAXVaZpJ5d"]
-      origen: ["s2"]
-      coins:
-        [
-          "bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token
-"
+      key: ['pJ5dZA8WhAXVaZpJ5d']
+      origen: ['s2']
+      coins: [
+          'bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token
+          '
         ]
   # WALLETS NUMERO TOTAL
-  - job_name: "wallet xdai s2"
+  - job_name: 'wallet xdai s2'
     scrape_interval: 20m
     static_configs:
-      - targets: ["51.210.187.61:3000"]
+      - targets: ['51.210.187.61:3000']
         labels:
-          group: "html"
+          group: 'html'
     metrics_path: /html
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["xdai"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['xdai']
 
-  - job_name: "wallet bitcoin s2"
+  - job_name: 'wallet bitcoin s2'
     scrape_interval: 20m
     static_configs:
-      - targets: ["51.210.187.61:3000"]
+      - targets: ['51.210.187.61:3000']
         labels:
-          group: "json"
+          group: 'json'
     metrics_path: /json
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["bitcoin"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin']
 
-  - job_name: "wallet ethereum s2"
+  - job_name: 'wallet ethereum s2'
     scrape_interval: 20m
     static_configs:
-      - targets: ["51.210.187.61:3000"]
+      - targets: ['51.210.187.61:3000']
         labels:
-          group: "csv"
+          group: 'csv'
     metrics_path: /csv
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ethereum"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ethereum']
 
-  - job_name: "wallet binance s2"
+  - job_name: 'wallet binance s2'
     scrape_interval: 20m
     static_configs:
-      - targets: ["51.210.187.61:3000"]
+      - targets: ['51.210.187.61:3000']
         labels:
-          group: "csv"
+          group: 'csv'
     metrics_path: /csv
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["binance"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['binance']
 
-  - job_name: "wallet polygon s2"
+  - job_name: 'wallet polygon s2'
     scrape_interval: 20m
     static_configs:
-      - targets: ["51.210.187.61:3000"]
+      - targets: ['51.210.187.61:3000']
         labels:
-          group: "csv"
+          group: 'csv'
     metrics_path: /csv
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["polygon"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['polygon']
 
-  # ELASTIC SCRAPPER NEWS
-  - job_name: "news count bitcoin s2"
+  # ELASTIC SCRAPPER POSTS COUNT
+  - job_name: 'posts count bitcoin s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["bitcoin"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin']
 
-  - job_name: "news count ethereum s2"
+  - job_name: 'posts count ethereum s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ethereum"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ethereum']
 
-  - job_name: "news count aave s2"
+  - job_name: 'posts count aave s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["aave"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aave']
 
-  - job_name: "news count cardano s2"
+  - job_name: 'posts count cardano s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["cardano"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['cardano']
 
-  - job_name: "news count algorand s2"
+  - job_name: 'posts count algorand s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["algorand"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['algorand']
 
-  - job_name: "news count curve s2"
+  - job_name: 'posts count curve s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["curve-dao-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['curve-dao-token']
 
-  - job_name: "news count crypto-dash s2"
+  - job_name: 'posts count crypto-dash s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["crypto-dash"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['crypto-dash']
 
-  - job_name: "news count dogecoin s2"
+  - job_name: 'posts count dogecoin s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["dogecoin"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dogecoin']
 
-  - job_name: "news count eos s2"
+  - job_name: 'posts count eos s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["eos"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['eos']
 
-  - job_name: "news count fantom s2"
+  - job_name: 'posts count fantom s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["fantom"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['fantom']
 
-  - job_name: "news count iota s2"
+  - job_name: 'posts count iota s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["iota"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['iota']
 
-  - job_name: "news count litecoin s2"
+  - job_name: 'posts count litecoin s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["litecoin"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['litecoin']
 
-  - job_name: "news count matic-network s2"
+  - job_name: 'posts count matic-network s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["matic-network"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['matic-network']
 
-  - job_name: "news count monero s2"
+  - job_name: 'posts count monero s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["monero"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['monero']
 
-  - job_name: "news count omisego s2"
+  - job_name: 'posts count omisego s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["omisego"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['omisego']
 
-  - job_name: "news count internet-computer s2"
+  - job_name: 'posts count internet-computer s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["internet-computer"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['internet-computer']
 
-  - job_name: "news count seedify-fund s2"
+  - job_name: 'posts count seedify-fund s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["seedify-fund"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['seedify-fund']
 
-  - job_name: "news count thorchain s2"
+  - job_name: 'posts count thorchain s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["thorchain"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['thorchain']
 
-  - job_name: "news count tezos s2"
+  - job_name: 'posts count tezos s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["tezos"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tezos']
 
-  - job_name: "news count ontology s2"
+  - job_name: 'posts count ontology s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ontology"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ontology']
 
-  - job_name: "news count pancakeswap-token s2"
+  - job_name: 'posts count pancakeswap-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["pancakeswap-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['pancakeswap-token']
 
-  - job_name: "news count polkadot s2"
+  - job_name: 'posts count polkadot s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["polkadot"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['polkadot']
 
-  - job_name: "news count republic-protocol s2"
+  - job_name: 'posts count republic-protocol s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["republic-protocol"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['republic-protocol']
 
-  - job_name: "news count stellar s2"
+  - job_name: 'posts count stellar s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["stellar"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stellar']
 
-  - job_name: "news count solana s2"
+  - job_name: 'posts count solana s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["solana"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['solana']
 
-  - job_name: "news count the-graph s2"
+  - job_name: 'posts count the-graph s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["the-graph"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-graph']
 
-  - job_name: "news count zcash s2"
+  - job_name: 'posts count zcash s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["zcash"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zcash']
 
-  - job_name: "news count chainlink s2"
+  - job_name: 'posts count chainlink s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["chainlink"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chainlink']
 
-  - job_name: "news count gochain s2"
+  - job_name: 'posts count gochain s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["gochain"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['gochain']
 
-  - job_name: "news count kusama s2"
+  - job_name: 'posts count kusama s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["kusama"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['kusama']
 
-  - job_name: "news count serum s2"
+  - job_name: 'posts count serum s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["serum"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['serum']
 
-  - job_name: "news count skale s2"
+  - job_name: 'posts count skale s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["skale"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['skale']
 
-  - job_name: "news count ocean-protocol s2"
+  - job_name: 'posts count ocean-protocol s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ocean-protocol"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ocean-protocol']
 
-  - job_name: "news count binancecoin s2"
+  - job_name: 'posts count binancecoin s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["binancecoin"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['binancecoin']
 
-  - job_name: "news count tether s2"
+  - job_name: 'posts count tether s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["tether"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tether']
 
-  - job_name: "news count uniswap s2"
+  - job_name: 'posts count uniswap s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["uniswap"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['uniswap']
 
-  - job_name: "news count bitcoin-cash s2"
+  - job_name: 'posts count bitcoin-cash s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["bitcoin-cash"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin-cash']
 
-  - job_name: "news count compound-governance-token s2"
+  - job_name: 'posts count compound-governance-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["compound-governance-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['compound-governance-token']
 
-  - job_name: "news count the-sandbox s2"
+  - job_name: 'posts count the-sandbox s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["the-sandbox"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-sandbox']
 
-  - job_name: "news count nexo s2"
+  - job_name: 'posts count nexo s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["nexo"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['nexo']
 
-  - job_name: "news count basic-attention-token s2"
+  - job_name: 'posts count basic-attention-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["basic-attention-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['basic-attention-token']
 
-  - job_name: "news count elrond-erd-2 s2"
+  - job_name: 'posts count elrond-erd-2 s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["elrond-erd-2"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['elrond-erd-2']
 
-  - job_name: "news count orion-protocol s2"
+  - job_name: 'posts count orion-protocol s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["orion-protocol"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['orion-protocol']
 
-  - job_name: "news count visor s2"
+  - job_name: 'posts count visor s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["visor"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['visor']
 
-  - job_name: "news count 1inch s2"
+  - job_name: 'posts count 1inch s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["1inch"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['1inch']
 
-  - job_name: "news count swipe s2"
+  - job_name: 'posts count swipe s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["swipe"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['swipe']
 
-  - job_name: "news count perpetual-protocol s2"
+  - job_name: 'posts count perpetual-protocol s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["perpetual-protocol"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['perpetual-protocol']
 
-  - job_name: "news count stratis s2"
+  - job_name: 'posts count stratis s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["stratis"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stratis']
 
-  - job_name: "news count ftx-token s2"
+  - job_name: 'posts count ftx-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ftx-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ftx-token']
 
-  - job_name: "news count alpha-finance s2"
+  - job_name: 'posts count alpha-finance s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["alpha-finance"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alpha-finance']
 
-  - job_name: "news count tenset s2"
+  - job_name: 'posts count tenset s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["tenset"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tenset']
 
-  - job_name: "news count lukso-token s2"
+  - job_name: 'posts count lukso-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["lukso-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['lukso-token']
 
-  - job_name: "news count terra-luna s2"
+  - job_name: 'posts count terra-luna s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["terra-luna"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['terra-luna']
 
-  - job_name: "news count axie-infinity s2"
+  - job_name: 'posts count axie-infinity s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["axie-infinity"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['axie-infinity']
 
-  - job_name: "news count sushi s2"
+  - job_name: 'posts count sushi s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["sushi"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['sushi']
 
-  - job_name: "news count flow s2"
+  - job_name: 'posts count flow s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["flow"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['flow']
 
-  - job_name: "news count alien-worlds s2"
+  - job_name: 'posts count alien-worlds s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["alien-worlds"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alien-worlds']
 
-  - job_name: "news count ripple s2"
+  - job_name: 'posts count ripple s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["ripple"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ripple']
 
-  - job_name: "news count blockchain-cuties-universe-governance s2"
+  - job_name: 'posts count blockchain-cuties-universe-governance s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["blockchain-cuties-universe-governance"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockchain-cuties-universe-governance']
 
-  - job_name: "news count concentrated-voting-power s2"
+  - job_name: 'posts count concentrated-voting-power s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["concentrated-voting-power"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['concentrated-voting-power']
 
-  - job_name: "news count aavegotchi s2"
+  - job_name: 'posts count aavegotchi s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["aavegotchi"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aavegotchi']
 
-  - job_name: "news count qtum s2"
+  - job_name: 'posts count qtum s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["qtum"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['qtum']
 
-  - job_name: "news count mask-network s2"
+  - job_name: 'posts count mask-network s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["mask-network"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mask-network']
 
-  - job_name: "news count huobi-token s2"
+  - job_name: 'posts count huobi-token s2'
     scrape_interval: 5m
     static_configs:
-      - targets: ["51.210.187.61:3001"]
+      - targets: ['51.210.187.61:3002']
         labels:
-          group: "elastic"
-    metrics_path: /news
+          group: 'elastic'
+    metrics_path: /posts
     params:
-      token: ["1venRTb4asd3D3deeddsf"]
-      origen: ["s2"]
-      target: ["huobi-token"]
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['huobi-token']
+
+  # ELASTIC SCRAPPER POSTS EUFORIA
+  - job_name: 'posts euforia count bitcoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin']
+
+  - job_name: 'posts euforia count ethereum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ethereum']
+
+  - job_name: 'posts euforia count aave s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aave']
+
+  - job_name: 'posts euforia count cardano s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['cardano']
+
+  - job_name: 'posts euforia count algorand s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['algorand']
+
+  - job_name: 'posts euforia count curve s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['curve-dao-token']
+
+  - job_name: 'posts euforia count crypto-dash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['crypto-dash']
+
+  - job_name: 'posts euforia count dogecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dogecoin']
+
+  - job_name: 'posts euforia count eos s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['eos']
+
+  - job_name: 'posts euforia count fantom s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['fantom']
+
+  - job_name: 'posts euforia count iota s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['iota']
+
+  - job_name: 'posts euforia count litecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['litecoin']
+
+  - job_name: 'posts euforia count matic-network s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['matic-network']
+
+  - job_name: 'posts euforia count monero s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['monero']
+
+  - job_name: 'posts euforia count omisego s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['omisego']
+
+  - job_name: 'posts euforia count internet-computer s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['internet-computer']
+
+  - job_name: 'posts euforia count seedify-fund s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['seedify-fund']
+
+  - job_name: 'posts euforia count thorchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['thorchain']
+
+  - job_name: 'posts euforia count tezos s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tezos']
+
+  - job_name: 'posts euforia count ontology s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ontology']
+
+  - job_name: 'posts euforia count pancakeswap-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['pancakeswap-token']
+
+  - job_name: 'posts euforia count polkadot s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['polkadot']
+
+  - job_name: 'posts euforia count republic-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['republic-protocol']
+
+  - job_name: 'posts euforia count stellar s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stellar']
+
+  - job_name: 'posts euforia count solana s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['solana']
+
+  - job_name: 'posts euforia count the-graph s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-graph']
+
+  - job_name: 'posts euforia count zcash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zcash']
+
+  - job_name: 'posts euforia count chainlink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chainlink']
+
+  - job_name: 'posts euforia count gochain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['gochain']
+
+  - job_name: 'posts euforia count kusama s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['kusama']
+
+  - job_name: 'posts euforia count serum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['serum']
+
+  - job_name: 'posts euforia count skale s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['skale']
+
+  - job_name: 'posts euforia count ocean-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ocean-protocol']
+
+  - job_name: 'posts euforia count binancecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['binancecoin']
+
+  - job_name: 'posts euforia count tether s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tether']
+
+  - job_name: 'posts euforia count uniswap s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['uniswap']
+
+  - job_name: 'posts euforia count bitcoin-cash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin-cash']
+
+  - job_name: 'posts euforia count compound-governance-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['compound-governance-token']
+
+  - job_name: 'posts euforia count the-sandbox s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-sandbox']
+
+  - job_name: 'posts euforia count nexo s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['nexo']
+
+  - job_name: 'posts euforia count basic-attention-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['basic-attention-token']
+
+  - job_name: 'posts euforia count elrond-erd-2 s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['elrond-erd-2']
+
+  - job_name: 'posts euforia count orion-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['orion-protocol']
+
+  - job_name: 'posts euforia count visor s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['visor']
+
+  - job_name: 'posts euforia count 1inch s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['1inch']
+
+  - job_name: 'posts euforia count swipe s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['swipe']
+
+  - job_name: 'posts euforia count perpetual-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['perpetual-protocol']
+
+  - job_name: 'posts euforia count stratis s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stratis']
+
+  - job_name: 'posts euforia count ftx-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ftx-token']
+
+  - job_name: 'posts euforia count alpha-finance s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alpha-finance']
+
+  - job_name: 'posts euforia count tenset s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tenset']
+
+  - job_name: 'posts euforia count lukso-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['lukso-token']
+
+  - job_name: 'posts euforia count terra-luna s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['terra-luna']
+
+  - job_name: 'posts euforia count axie-infinity s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['axie-infinity']
+
+  - job_name: 'posts euforia count sushi s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['sushi']
+
+  - job_name: 'posts euforia count flow s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['flow']
+
+  - job_name: 'posts euforia count alien-worlds s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alien-worlds']
+
+  - job_name: 'posts euforia count ripple s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ripple']
+
+  - job_name: 'posts euforia count blockchain-cuties-universe-governance s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockchain-cuties-universe-governance']
+
+  - job_name: 'posts euforia count concentrated-voting-power s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['concentrated-voting-power']
+
+  - job_name: 'posts euforia count aavegotchi s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aavegotchi']
+
+  - job_name: 'posts euforia count qtum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['qtum']
+
+  - job_name: 'posts euforia count mask-network s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mask-network']
+
+  - job_name: 'posts euforia count huobi-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['huobi-token']
+
+  # ELASTIC SCRAPPER POSTS PANIC
+  - job_name: 'posts panic count bitcoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin']
+
+  - job_name: 'posts panic count ethereum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ethereum']
+
+  - job_name: 'posts panic count aave s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aave']
+
+  - job_name: 'posts panic count cardano s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['cardano']
+
+  - job_name: 'posts panic count algorand s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['algorand']
+
+  - job_name: 'posts panic count curve s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['curve-dao-token']
+
+  - job_name: 'posts panic count crypto-dash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['crypto-dash']
+
+  - job_name: 'posts panic count dogecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dogecoin']
+
+  - job_name: 'posts panic count eos s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['eos']
+
+  - job_name: 'posts panic count fantom s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['fantom']
+
+  - job_name: 'posts panic count iota s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['iota']
+
+  - job_name: 'posts panic count litecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['litecoin']
+
+  - job_name: 'posts panic count matic-network s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['matic-network']
+
+  - job_name: 'posts panic count monero s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['monero']
+
+  - job_name: 'posts panic count omisego s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['omisego']
+
+  - job_name: 'posts panic count internet-computer s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['internet-computer']
+
+  - job_name: 'posts panic count seedify-fund s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['seedify-fund']
+
+  - job_name: 'posts panic count thorchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['thorchain']
+
+  - job_name: 'posts panic count tezos s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tezos']
+
+  - job_name: 'posts panic count ontology s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ontology']
+
+  - job_name: 'posts panic count pancakeswap-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['pancakeswap-token']
+
+  - job_name: 'posts panic count polkadot s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['polkadot']
+
+  - job_name: 'posts panic count republic-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['republic-protocol']
+
+  - job_name: 'posts panic count stellar s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stellar']
+
+  - job_name: 'posts panic count solana s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['solana']
+
+  - job_name: 'posts panic count the-graph s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-graph']
+
+  - job_name: 'posts panic count zcash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zcash']
+
+  - job_name: 'posts panic count chainlink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chainlink']
+
+  - job_name: 'posts panic count gochain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['gochain']
+
+  - job_name: 'posts panic count kusama s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['kusama']
+
+  - job_name: 'posts panic count serum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['serum']
+
+  - job_name: 'posts panic count skale s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['skale']
+
+  - job_name: 'posts panic count ocean-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ocean-protocol']
+
+  - job_name: 'posts panic count binancecoin s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['binancecoin']
+
+  - job_name: 'posts panic count tether s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tether']
+
+  - job_name: 'posts panic count uniswap s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['uniswap']
+
+  - job_name: 'posts panic count bitcoin-cash s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['bitcoin-cash']
+
+  - job_name: 'posts panic count compound-governance-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['compound-governance-token']
+
+  - job_name: 'posts panic count the-sandbox s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['the-sandbox']
+
+  - job_name: 'posts panic count nexo s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['nexo']
+
+  - job_name: 'posts panic count basic-attention-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['basic-attention-token']
+
+  - job_name: 'posts panic count elrond-erd-2 s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['elrond-erd-2']
+
+  - job_name: 'posts panic count orion-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['orion-protocol']
+
+  - job_name: 'posts panic count visor s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['visor']
+
+  - job_name: 'posts panic count 1inch s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['1inch']
+
+  - job_name: 'posts panic count swipe s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['swipe']
+
+  - job_name: 'posts panic count perpetual-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['perpetual-protocol']
+
+  - job_name: 'posts panic count stratis s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['stratis']
+
+  - job_name: 'posts panic count ftx-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ftx-token']
+
+  - job_name: 'posts panic count alpha-finance s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alpha-finance']
+
+  - job_name: 'posts panic count tenset s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['tenset']
+
+  - job_name: 'posts panic count lukso-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['lukso-token']
+
+  - job_name: 'posts panic count terra-luna s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['terra-luna']
+
+  - job_name: 'posts panic count axie-infinity s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['axie-infinity']
+
+  - job_name: 'posts panic count sushi s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['sushi']
+
+  - job_name: 'posts panic count flow s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['flow']
+
+  - job_name: 'posts panic count alien-worlds s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['alien-worlds']
+
+  - job_name: 'posts panic count ripple s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['ripple']
+
+  - job_name: 'posts panic count blockchain-cuties-universe-governance s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockchain-cuties-universe-governance']
+
+  - job_name: 'posts panic count concentrated-voting-power s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['concentrated-voting-power']
+
+  - job_name: 'posts panic count aavegotchi s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['aavegotchi']
+
+  - job_name: 'posts panic count qtum s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['qtum']
+
+  - job_name: 'posts panic count mask-network s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mask-network']
+
+  - job_name: 'posts panic count huobi-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['huobi-token']
