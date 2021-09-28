@@ -47,7 +47,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'moonriver','chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
+          'moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
           '
         ]
   # WALLETS NUMERO TOTAL
