@@ -111,6 +111,62 @@ scrape_configs:
       origen: ['s2']
       target: ['polygon']
 
+  # ****************** TOTALS ************************************************************************************
+  - job_name: 'posts_total count s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_total
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+
+  - job_name: 'posts_euforia_total count s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia_total
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+
+  - job_name: 'posts_panic_total count s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic_total
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+
+  - job_name: 'posts_usuaris_unics_total count s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics_total
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+
+  - job_name: 'posts_reach_total count s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_total
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+
   # ********************************************** ELASTIC SCRAPPER POSTS COUNT **********************************
   - job_name: 'posts count bitcoin s2'
     scrape_interval: 5m
