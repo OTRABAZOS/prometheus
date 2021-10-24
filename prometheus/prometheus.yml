@@ -47,7 +47,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
+          'chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
           '
         ]
   # WALLETS NUMERO TOTAL
@@ -1068,6 +1068,90 @@ scrape_configs:
       origen: ['s2']
       target: ['monsta-infinite']
 
+  - job_name: 'posts count chromaway s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chromaway']
+
+  - job_name: 'posts count zilliqa s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zilliqa']
+
+  - job_name: 'posts count wax s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wax']
+
+  - job_name: 'posts count amp-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['amp-token']
+
+  - job_name: 'posts count blockstack s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockstack']
+
+  - job_name: 'posts count mina-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mina-protocol']
+
+  - job_name: 'posts count raydium s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['raydium']
+
   # ********************************************* ELASTIC SCRAPPER POSTS EUFORIA ***********************************
   - job_name: 'posts euforia count bitcoin s2'
     scrape_interval: 5m
@@ -1968,6 +2052,90 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['monsta-infinite']
+
+  - job_name: 'posts euforia count chromaway s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chromaway']
+
+  - job_name: 'posts euforia count zilliqa s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zilliqa']
+
+  - job_name: 'posts euforia count wax s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wax']
+
+  - job_name: 'posts euforia count amp-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['amp-token']
+
+  - job_name: 'posts euforia count blockstack s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockstack']
+
+  - job_name: 'posts euforia count mina-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mina-protocol']
+
+  - job_name: 'posts euforia count raydium s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['raydium']
 
   # ************************************************ ELASTIC SCRAPPER POSTS PANIC *********************************************
   - job_name: 'posts panic count bitcoin s2'
@@ -2870,6 +3038,90 @@ scrape_configs:
       origen: ['s2']
       target: ['monsta-infinite']
 
+  - job_name: 'posts panic count chromaway s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chromaway']
+
+  - job_name: 'posts panic count zilliqa s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zilliqa']
+
+  - job_name: 'posts panic count wax s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wax']
+
+  - job_name: 'posts panic count amp-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['amp-token']
+
+  - job_name: 'posts panic count blockstack s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockstack']
+
+  - job_name: 'posts panic count mina-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mina-protocol']
+
+  - job_name: 'posts panic count raydium s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['raydium']
+
   # ************************************************ ELASTIC SCRAPPER POSTS USUARIS UNICS *********************************************
   - job_name: 'posts unics count bitcoin s2'
     scrape_interval: 5m
@@ -3771,6 +4023,90 @@ scrape_configs:
       origen: ['s2']
       target: ['monsta-infinite']
 
+  - job_name: 'posts unics count chromaway s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chromaway']
+
+  - job_name: 'posts unics count zilliqa s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zilliqa']
+
+  - job_name: 'posts unics count wax s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wax']
+
+  - job_name: 'posts unics count amp-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['amp-token']
+
+  - job_name: 'posts unics count blockstack s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockstack']
+
+  - job_name: 'posts unics count mina-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mina-protocol']
+
+  - job_name: 'posts unics count raydium s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['raydium']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH *********************************************
   - job_name: 'posts reach count bitcoin s2'
     scrape_interval: 5m
@@ -4671,3 +5007,87 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['monsta-infinite']
+
+  - job_name: 'posts reach count chromaway s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['chromaway']
+
+  - job_name: 'posts reach count zilliqa s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['zilliqa']
+
+  - job_name: 'posts reach count wax s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wax']
+
+  - job_name: 'posts reach count amp-token s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['amp-token']
+
+  - job_name: 'posts reach count blockstack s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['blockstack']
+
+  - job_name: 'posts reach count mina-protocol s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['mina-protocol']
+
+  - job_name: 'posts reach count raydium s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['raydium']
