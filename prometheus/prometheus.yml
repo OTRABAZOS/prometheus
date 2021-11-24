@@ -47,7 +47,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'starlink,ufo-gaming,vulcan-forged,ultra,merit-circle,star-atlas,verasity,redfox-labs-2,smooth-love-potion,phantasma,star-atlas-dao,gods-unchained,derace,aurory,atari,gala,cocos-bcx,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network,kucoin-shares,my-neighbor-alice,noia-network,enjincoin,loopring,decentraland,amber,synapse-2,coinbase-stock,dogelon-mars,chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
+          'vechain,streamr,dragonchain,starlink,ufo-gaming,vulcan-forged,ultra,merit-circle,star-atlas,verasity,redfox-labs-2,smooth-love-potion,phantasma,star-atlas-dao,gods-unchained,derace,aurory,atari,gala,cocos-bcx,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network,kucoin-shares,my-neighbor-alice,noia-network,enjincoin,loopring,decentraland,amber,synapse-2,coinbase-stock,dogelon-mars,chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain,tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
           '
         ]
   # WALLETS NUMERO TOTAL
@@ -1738,6 +1738,42 @@ scrape_configs:
       origen: ['s2']
       target: ['kucoin-shares']
 
+  - job_name: 'posts count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
+
   # ********************************************* ELASTIC SCRAPPER POSTS EUFORIA ***********************************
   - job_name: 'posts euforia count bitcoin s2'
     scrape_interval: 5m
@@ -3286,6 +3322,42 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['kucoin-shares']
+
+  - job_name: 'posts euforia count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts euforia count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts euforia count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
 
   # ************************************************ ELASTIC SCRAPPER POSTS PANIC *********************************************
   - job_name: 'posts panic count bitcoin s2'
@@ -4836,6 +4908,42 @@ scrape_configs:
       origen: ['s2']
       target: ['kucoin-shares']
 
+  - job_name: 'posts panic count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts panic count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts panic count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
+
   # ************************************************ ELASTIC SCRAPPER POSTS USUARIS UNICS *********************************************
   - job_name: 'posts unics count bitcoin s2'
     scrape_interval: 5m
@@ -6384,6 +6492,42 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['kucoin-shares']
+
+  - job_name: 'posts unics count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts unics count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts unics count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
 
  # ************************************************ ELASTIC SCRAPPER POSTS REACH *********************************************
   - job_name: 'posts reach count bitcoin s2'
@@ -7934,6 +8078,42 @@ scrape_configs:
       origen: ['s2']
       target: ['kucoin-shares']
 
+  - job_name: 'posts reach count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts reach count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts reach count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH EUPHORIA *********************************************
   - job_name: 'posts reach euphoria count bitcoin s2'
     scrape_interval: 5m
@@ -9483,6 +9663,42 @@ scrape_configs:
       origen: ['s2']
       target: ['kucoin-shares']
 
+  - job_name: 'posts reach euphoria count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts reach euphoria count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts reach euphoria count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH PANIC *********************************************
   - job_name: 'posts reach panic count bitcoin s2'
     scrape_interval: 5m
@@ -11031,3 +11247,39 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['kucoin-shares']
+
+  - job_name: 'posts reach panic count vechain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['vechain']
+
+  - job_name: 'posts reach panic count streamr s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['streamr']
+
+  - job_name: 'posts reach panic count dragonchain s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dragonchain']
