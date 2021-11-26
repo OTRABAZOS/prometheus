@@ -47,8 +47,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'vechain,streamr,dragonchain,starlink,ufo-gaming,vulcan-forged,ultra,merit-circle,star-atlas,verasity,redfox-labs-2,smooth-love-potion,phantasma,star-atlas-dao,gods-unchained,derace,aurory,atari,gala,cocos-bcx,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network,kucoin-shares,my-neighbor-alice,noia-network,enjincoin,loopring,decentraland,amber,synapse-2,coinbase-stock,dogelon-mars,chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain
-          '
+          'vechain,streamr,dragonchain,starlink,ufo-gaming,vulcan-forged,ultra,merit-circle,star-atlas,verasity,redfox-labs-2,smooth-love-potion,phantasma,star-atlas-dao,gods-unchained,derace,aurory,atari,gala,cocos-bcx,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network,kucoin-shares,my-neighbor-alice,noia-network,enjincoin,loopring,decentraland,amber,synapse-2,coinbase-stock,dogelon-mars,chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain'
         ]
 
     - job_name: 'coingeckoproxy s2 v2'
@@ -62,8 +61,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world
-          '
+          'tezos,ontology,pancakeswap-token,polkadot,republic-protocol,stellar,solana,the-graph,zcash,chainlink,gochain,kusama,serum,skale,ocean-protocol,binancecoin,tether,uniswap,bitcoin-cash,compound-governance-token,the-sandbox,nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
         ]
 
   # WALLETS NUMERO TOTAL
