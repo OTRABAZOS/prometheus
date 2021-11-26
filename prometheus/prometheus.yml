@@ -50,7 +50,7 @@ scrape_configs:
           'vechain,streamr,dragonchain,starlink,ufo-gaming,vulcan-forged,ultra,merit-circle,star-atlas,verasity,redfox-labs-2,smooth-love-potion,phantasma,star-atlas-dao,gods-unchained,derace,aurory,atari,gala,cocos-bcx,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network,kucoin-shares,my-neighbor-alice,noia-network,enjincoin,loopring,decentraland,amber,synapse-2,coinbase-stock,dogelon-mars,chromaway,zilliqa,wax,amp-token,blockstack,mina-protocol,raydium,monsta-infinite,moonriver,chiliz,avalanche-2,bitcoin,ethereum,aave,cardano,algorand,curve-dao-token,crypto-dash,dogecoin,eos,fantom,iota,litecoin,matic-network,monero,omisego,internet-computer,seedify-fund,thorchain'
         ]
 
-    - job_name: 'coingeckoproxy s2 v2'
+  - job_name: 'coingeckoproxy s2 v2'
     scrape_interval: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
