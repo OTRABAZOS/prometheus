@@ -120,7 +120,7 @@ scrape_configs:
           'nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance'
         ]
 
-  - job_name: 'coingeckoproxy s2 121-134'
+  - job_name: 'coingeckoproxy s2 121-135'
     scrape_interval: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
@@ -131,7 +131,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'cosmos,metahero,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
+          'cosmos,wink,metahero,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
         ]
 
   # WALLETS NUMERO TOTAL
@@ -1870,6 +1870,18 @@ scrape_configs:
       origen: ['s2']
       target: ['metahero']
 
+  - job_name: 'posts count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
+
   - job_name: 'posts count cosmos s2'
     scrape_interval: 5m
     static_configs:
@@ -3478,6 +3490,18 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['metahero']
+
+  - job_name: 'posts euforia count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
 
   - job_name: 'posts euforia count cosmos s2'
     scrape_interval: 5m
@@ -5088,6 +5112,18 @@ scrape_configs:
       origen: ['s2']
       target: ['metahero']
 
+  - job_name: 'posts panic count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
+
   - job_name: 'posts panic count cosmos s2'
     scrape_interval: 5m
     static_configs:
@@ -6696,6 +6732,18 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['metahero']
+
+  - job_name: 'posts unics count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
 
   - job_name: 'posts unics count cosmos s2'
     scrape_interval: 5m
@@ -8306,6 +8354,18 @@ scrape_configs:
       origen: ['s2']
       target: ['metahero']
 
+  - job_name: 'posts reach count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
+
   - job_name: 'posts reach count cosmos s2'
     scrape_interval: 5m
     static_configs:
@@ -9915,6 +9975,18 @@ scrape_configs:
       origen: ['s2']
       target: ['metahero']
 
+  - job_name: 'posts reach euphoria count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
+
   - job_name: 'posts reach euphoria count cosmos s2'
     scrape_interval: 5m
     static_configs:
@@ -11523,6 +11595,18 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['metahero']
+
+  - job_name: 'posts reach panic count wink s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['wink']
 
   - job_name: 'posts reach panic count cosmos s2'
     scrape_interval: 5m
