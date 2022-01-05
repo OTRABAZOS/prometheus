@@ -120,7 +120,7 @@ scrape_configs:
           'nexo,basic-attention-token,elrond-erd-2,orion-protocol,visor,1inch,swipe,perpetual-protocol,stratis,ftx-token,alpha-finance,tenset,lukso-token,terra-luna,axie-infinity,sushi,flow,alien-worlds,ripple,blockchain-cuties-universe-governance'
         ]
 
-  - job_name: 'coingeckoproxy s2 121-136'
+  - job_name: 'coingeckoproxy s2 121-137'
     scrape_interval: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
@@ -131,7 +131,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'ceek,cosmos,wink,metahero,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
+          'dent,ceek,cosmos,wink,metahero,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
         ]
 
   # WALLETS NUMERO TOTAL
@@ -1906,6 +1906,18 @@ scrape_configs:
       origen: ['s2']
       target: ['ceek']
 
+  - job_name: 'posts count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
+
   # ********************************************* ELASTIC SCRAPPER POSTS EUFORIA ***********************************
   - job_name: 'posts euforia count bitcoin s2'
     scrape_interval: 5m
@@ -3538,6 +3550,18 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['ceek']
+
+  - job_name: 'posts euforia count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
 
   # ************************************************ ELASTIC SCRAPPER POSTS PANIC *********************************************
   - job_name: 'posts panic count bitcoin s2'
@@ -5172,6 +5196,18 @@ scrape_configs:
       origen: ['s2']
       target: ['ceek']
 
+  - job_name: 'posts panic count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
+
   # ************************************************ ELASTIC SCRAPPER POSTS USUARIS UNICS *********************************************
   - job_name: 'posts unics count bitcoin s2'
     scrape_interval: 5m
@@ -6804,6 +6840,18 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['ceek']
+
+  - job_name: 'posts unics count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
 
  # ************************************************ ELASTIC SCRAPPER POSTS REACH *********************************************
   - job_name: 'posts reach count bitcoin s2'
@@ -8438,6 +8486,18 @@ scrape_configs:
       origen: ['s2']
       target: ['ceek']
 
+  - job_name: 'posts reach count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH EUPHORIA *********************************************
   - job_name: 'posts reach euphoria count bitcoin s2'
     scrape_interval: 5m
@@ -10071,6 +10131,18 @@ scrape_configs:
       origen: ['s2']
       target: ['ceek']
 
+  - job_name: 'posts reach euphoria count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH PANIC *********************************************
   - job_name: 'posts reach panic count bitcoin s2'
     scrape_interval: 5m
@@ -11703,3 +11775,15 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['ceek']
+
+  - job_name: 'posts reach panic count dent s2'
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['dent']
