@@ -64,6 +64,7 @@ services:
   traefik:
     container_name: traefik
     #image: traefik:v2.4.9
+    image: traefik:v2.6.0
     restart: always
     command:
       - --log.level=WARN
