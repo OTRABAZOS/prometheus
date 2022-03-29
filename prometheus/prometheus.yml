@@ -38,7 +38,7 @@ scrape_configs:
   # MONDES VALORS
   - job_name: 'coingeckoproxy s2 1-20'
     scrape_interval: 120s
-    scrape_timeout: 60s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -53,6 +53,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 21-40'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -67,6 +68,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 41-60'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -81,6 +83,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 61-80'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -95,6 +98,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 81-100'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -109,6 +113,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 101-120'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -123,6 +128,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 121-140'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
@@ -137,6 +143,7 @@ scrape_configs:
 
   - job_name: 'coingeckoproxy s2 141-160'
     scrape_interval: 120s
+    scrape_timeout: 120s
     static_configs:
       - targets: ['51.210.187.61:4000']
         labels:
