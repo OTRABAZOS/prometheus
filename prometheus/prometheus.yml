@@ -578,6 +578,7 @@ scrape_configs:
 
   - job_name: 'posts count solana s2'
     scrape_interval: 5m
+    scrape_timeout: 1m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
