@@ -153,7 +153,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'arpa-chain'
+          'arpa-chain,velas'
         ]
 
   # WALLETS NUMERO TOTAL
@@ -586,7 +586,7 @@ scrape_configs:
 
   - job_name: 'posts count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -1989,6 +1989,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
   # ********************************************* ELASTIC SCRAPPER POSTS EUFORIA ***********************************
   - job_name: 'posts euforia count bitcoin s2'
     scrape_interval: 5m
@@ -2280,7 +2293,7 @@ scrape_configs:
 
   - job_name: 'posts euforia count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -3683,6 +3696,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts euforia count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_euforia
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
   # ************************************************ ELASTIC SCRAPPER POSTS PANIC *********************************************
   - job_name: 'posts panic count bitcoin s2'
     scrape_interval: 5m
@@ -3974,7 +4000,7 @@ scrape_configs:
 
   - job_name: 'posts panic count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -5377,6 +5403,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts panic count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
   # ************************************************ ELASTIC SCRAPPER POSTS USUARIS UNICS *********************************************
   - job_name: 'posts unics count bitcoin s2'
     scrape_interval: 5m
@@ -5668,7 +5707,7 @@ scrape_configs:
 
   - job_name: 'posts unics count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -7071,6 +7110,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts unics count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_usuaris_unics
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH *********************************************
   - job_name: 'posts reach count bitcoin s2'
     scrape_interval: 5m
@@ -7362,7 +7414,7 @@ scrape_configs:
 
   - job_name: 'posts reach count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -8765,6 +8817,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts reach count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH EUPHORIA *********************************************
   - job_name: 'posts reach euphoria count bitcoin s2'
     scrape_interval: 5m
@@ -9056,7 +9121,7 @@ scrape_configs:
 
   - job_name: 'posts reach euphoria count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -10459,6 +10524,19 @@ scrape_configs:
       origen: ['s2']
       target: ['arpa-chain']
 
+  - job_name: 'posts reach euphoria count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_euphoria
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
+
  # ************************************************ ELASTIC SCRAPPER POSTS REACH PANIC *********************************************
   - job_name: 'posts reach panic count bitcoin s2'
     scrape_interval: 5m
@@ -10750,7 +10828,7 @@ scrape_configs:
 
   - job_name: 'posts reach panic count solana s2'
     scrape_interval: 5m
-    scrape_timeout: 1m
+    scrape_timeout: 3m
     static_configs:
       - targets: ['51.210.187.61:3002']
         labels:
@@ -12152,3 +12230,16 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['arpa-chain']
+
+  - job_name: 'posts reach panic count velas s2'
+    scrape_interval: 5m
+    scrape_timeout: 3m
+    static_configs:
+      - targets: ['51.210.187.61:3002']
+        labels:
+          group: 'elastic'
+    metrics_path: /posts_reach_panic
+    params:
+      token: ['1venRTb4asd3D3deeddsf']
+      origen: ['s2']
+      target: ['velas']
