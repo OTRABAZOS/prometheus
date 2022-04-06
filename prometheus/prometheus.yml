@@ -63,7 +63,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,wonderland,ecash,kadena,olympus,quant-network'
+          'clean-carbon,deapcoin,polka-city,v-id-blockchain,saito,rainicorn,faraland,chain-guardians,revv,crypto-com-chain,okb,theta-token,iotex,magic-internet-money,harmony,hedera-hashgraph,ecash,kadena,olympus,quant-network'
         ]
 
   - job_name: 'coingeckoproxy s2 41-60'
@@ -141,7 +141,7 @@ scrape_configs:
           'aurora-dao,quantstamp,secret,dent,ceek,cosmos,wink,metahero,concentrated-voting-power,aavegotchi,qtum,mask-network,huobi-token,illuvium,binemon,arweave,telos,mobox,celo,wilder-world'
         ]
 
-  - job_name: 'coingeckoproxy s2 141-144'
+  - job_name: 'coingeckoproxy s2 141-143'
     scrape_interval: 120s
     scrape_timeout: 120s
     static_configs:
@@ -153,7 +153,7 @@ scrape_configs:
       key: ['pJ5dZA8WhAXVaZpJ5d']
       origen: ['s2']
       coins: [
-          'arpa-chain,velas,bit-bcn,clean-carbon'
+          'arpa-chain,velas,bit-bcn'
         ]
 
   # WALLETS NUMERO TOTAL
@@ -1772,18 +1772,6 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['hedera-hashgraph']
-
-  - job_name: 'posts count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
 
   - job_name: 'posts count ecash s2'
     scrape_interval: 5m
@@ -3506,18 +3494,6 @@ scrape_configs:
       origen: ['s2']
       target: ['hedera-hashgraph']
 
-  - job_name: 'posts euforia count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_euforia
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
-
   - job_name: 'posts euforia count ecash s2'
     scrape_interval: 5m
     static_configs:
@@ -5238,18 +5214,6 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['hedera-hashgraph']
-
-  - job_name: 'posts panic count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_panic
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
 
   - job_name: 'posts panic count ecash s2'
     scrape_interval: 5m
@@ -6972,18 +6936,6 @@ scrape_configs:
       origen: ['s2']
       target: ['hedera-hashgraph']
 
-  - job_name: 'posts unics count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_usuaris_unics
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
-
   - job_name: 'posts unics count ecash s2'
     scrape_interval: 5m
     static_configs:
@@ -8704,18 +8656,6 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['hedera-hashgraph']
-
-  - job_name: 'posts reach count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_reach
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
 
   - job_name: 'posts reach count ecash s2'
     scrape_interval: 5m
@@ -10438,18 +10378,6 @@ scrape_configs:
       origen: ['s2']
       target: ['hedera-hashgraph']
 
-  - job_name: 'posts reach euphoria count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_reach_euphoria
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
-
   - job_name: 'posts reach euphoria count ecash s2'
     scrape_interval: 5m
     static_configs:
@@ -12170,18 +12098,6 @@ scrape_configs:
       token: ['1venRTb4asd3D3deeddsf']
       origen: ['s2']
       target: ['hedera-hashgraph']
-
-  - job_name: 'posts reach panic count wonderland s2'
-    scrape_interval: 5m
-    static_configs:
-      - targets: ['51.210.187.61:3002']
-        labels:
-          group: 'elastic'
-    metrics_path: /posts_reach_panic
-    params:
-      token: ['1venRTb4asd3D3deeddsf']
-      origen: ['s2']
-      target: ['wonderland']
 
   - job_name: 'posts reach panic count ecash s2'
     scrape_interval: 5m
